@@ -7,7 +7,7 @@ state([
     'name' => null,
 ]);
 mount(function () {
-    //$this->count = 1;
+    $this->count = 1;
 });
 
 $decrement = function (){
