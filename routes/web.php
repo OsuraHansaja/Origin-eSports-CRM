@@ -29,7 +29,24 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    /*
     Route::get('/leads', [LeadController::class,'index'])->name('leads.index');
     Route::get('/leads/create', [LeadController::class,'create'])->name('leads.create');
     Route::post('/leads/store', [LeadController::class,'store'])->name('leads.store');
+    Route::post('/leads/edit', [LeadController::class,'store'])->name('leads.edit');*/
+
+    //leads routes for testing
+    Route::controller(LeadController::class)->group(function (){
+        Route::get('/leads','index')->name('leads.index');
+        Route::get('/leads/create','create')->name('leads.create');
+        Route::post('/leads','store')->name('leads.store');
+        Route::get('/leads/{id}','show')->name('leads.show');
+        Route::get('/leads/edit','edit')->name('leads.edit');
+        Route::patch('/leads/update','update')->name('leads.update');
+        Route::delete('/leads/destroy','destroy')->name('leads.delete');
+    });
+
+    // Forum routes
+    Route::resource('forum', ForumPostController::class);
+
 });
