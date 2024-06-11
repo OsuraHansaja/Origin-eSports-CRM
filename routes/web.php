@@ -9,7 +9,7 @@ Route::get('/hello', function () {
     ]);
 });
 
-Route::view('/contact','contact')->name('contact');
+Route::view('/contact-us','contact')->name('contact');
 
 /*Route::get('/contact',function () {
     return view('contact');
