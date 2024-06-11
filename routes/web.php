@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LeadController;
+use App\Http\Controllers\ForumPostController;
 
 Route::get('/hello', function () {
     return view('hello', [
