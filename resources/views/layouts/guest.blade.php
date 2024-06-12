@@ -25,6 +25,7 @@
 
             </div>
             <div class="nav flex">
+                <a href="{{ route('forum.index') }}" class="p-4 block">Forum</a>
                 <a href="{{ route('contact') }}" class="p-4 block">Contact</a>
                 <a href="/login" class="p-4 block">Login</a>
                 <a href="/register" class="p-4 block bg-blue-600 rounded-full hover:bg-blue-800">Register</a>

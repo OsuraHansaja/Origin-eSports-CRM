@@ -14,7 +14,7 @@
                     <h2 class="text-xl font-bold">{{ $post->title }}</h2>
                     <p>{{ $post->body }}</p>
                     <a href="{{ route('forum.edit', $post->id) }}" class="text-blue-500">Edit</a>
-                    <form action="{{ route('forum.destroy', $post->id) }}" method="POST" class="inline-block">
+                    <form action="{{ route('forum.destroy', $post->id) }}" method="POST" class="inline-block" onsubmit="return confirm('Are you sure you want to delete this post?');">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="text-red-500">Delete</button>

@@ -35,20 +35,15 @@ class ForumPostController extends Controller
         return redirect()->route('forum.index');
     }
 
-    public function edit(ForumPost $forumPost)
+    public function edit($id)
     {
-        if ($forumPost->user_id != Auth::id()) {
-            abort(403);
-        }
-
+        $forumPost = ForumPost::findOrFail($id);
         return view('forum.edit', compact('forumPost'));
     }
 
-    public function update(Request $request, ForumPost $forumPost)
+    public function update(Request $request, $id)
     {
-        if ($forumPost->user_id != Auth::id()) {
-            abort(403);
-        }
+        $forumPost = ForumPost::findOrFail($id);
 
         $request->validate([
             'title' => 'required|string|max:255',
@@ -60,13 +55,11 @@ class ForumPostController extends Controller
         return redirect()->route('forum.index');
     }
 
-    public function destroy(ForumPost $forumPost)
+    public function destroy($id)
     {
-        if ($forumPost->user_id != Auth::id()) {
-            abort(403);
-        }
-
+        $forumPost = ForumPost::findOrFail($id);
         $forumPost->delete();
         return redirect()->route('forum.index');
     }
 }
+
