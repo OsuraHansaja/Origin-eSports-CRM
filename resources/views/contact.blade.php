@@ -1,5 +1,13 @@
 <x-guest-layout>
-    <div class="container mx-auto py-6">
-        <h1 class="text-2xl">Contact Us</h1>
+    <div class="container mx-auto px-4 py-16">
+        <div class="md:flex md:items-center md:justify-between">
+            <div class="md:w-1/2 mb-8 md:mb-0">
+                <h1 class="text-4xl font-bold text-gray-900 leading-tight mb-4">Contact Us</h1>
+                <a href= "mailto: name@email.com" class="text-lg text-gray-700 mb-6"> osuradesilva@gmail.com</a>
+            </div>
+            <div class="md:w-1/2">
+                <img src="/images/gaming_controler_img.svg" alt="CRM Illustration" class="w-full h-auto md:max-w-lg mx-auto">
+            </div>
+        </div>
     </div>
 </x-guest-layout>
