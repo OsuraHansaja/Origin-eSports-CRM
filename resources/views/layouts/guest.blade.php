@@ -1,46 +1,54 @@
+<!-- resources/views/layouts/guest.blade.php -->
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <title>{{ config('app.name', 'Laravel') }}</title>
-
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-        <!-- Styles -->
-        @livewireStyles
-    </head>
-    <body>
-    <header class="py-6">
-        <div class="container mx-auto flex justify-between bg-slate-800 text-white rounded-full p-2">
-            <div class="logo p-4">
-                <a href="/">{{ config('app.name', 'Laravel') }}</a>
-
-            </div>
-            <div class="nav flex">
-                <a href="{{ route('forum.index') }}" class="p-4 block">Forum</a>
-                <a href="{{ route('contact') }}" class="p-4 block">Contact</a>
-                <a href="/login" class="p-4 block">Login</a>
-                <a href="/register" class="p-4 block bg-blue-600 rounded-full hover:bg-blue-800">Register</a>
-            </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@yield('title', 'Origin Esports')</title>
+    @vite('resources/css/app.css')
+    @vite('resources/js/app.js')
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+<!-- Navbar -->
+<nav class="bg-gray-800 p-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a href="{{ route('home') }}" class="text-2xl font-bold text-white">Origin Esports</a>
+        <ul class="flex space-x-6">
+            <li><a href="{{ route('home') }}" class="hover:text-orange-500">Home</a></li>
+            <li><a href="{{ route('about') }}" class="hover:text-orange-500">About</a></li>
+            <li><a href="{{ route('teams') }}" class="hover:text-orange-500">Teams</a></li>
+            <li><a href="{{ route('news') }}" class="hover:text-orange-500">News</a></li>
+            <li><a href="{{ route('shop') }}" class="hover:text-orange-500">Shop</a></li>
+            <li><a href="{{ route('partners') }}" class="hover:text-orange-500">Partners</a></li>
+        </ul>
+        <div>
+            @auth
+                <a href="{{ route('dashboard') }}" class="bg-orange-500 px-4 py-2 rounded text-white">Dashboard</a>
+            @else
+                <a href="{{ route('login') }}" class="bg-orange-500 px-4 py-2 rounded text-white">Login</a>
+                <a href="{{ route('register') }}" class="bg-orange-500 px-4 py-2 rounded text-white ml-2">Register</a>
+            @endauth
         </div>
-    </header>
-        <div class="font-sans text-gray-900 antialiased">
-            {{ $slot }}
-        </div>
-    <footer>
-        <div class="container text-center">
-            &copy copyright
-        </div>
-    </footer>
+    </div>
+</nav>
 
-        @livewireScripts
-    </body>
+<!-- Content -->
+<main class="py-8">
+    @yield('content')
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white p-4 mt-8">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <p>&copy; 2024 Origin Esports</p>
+        <div class="space-x-4">
+            <a href="#" class="hover:text-orange-500">Facebook</a>
+            <a href="#" class="hover:text-orange-500">Twitter</a>
+            <a href="#" class="hover:text-orange-500">Instagram</a>
+        </div>
+    </div>
+</footer>
+</body>
 </html>

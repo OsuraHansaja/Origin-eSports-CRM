@@ -16,11 +16,21 @@ Route::view('/contact-us','contact')->name('contact');
 /*Route::get('/contact',function () {
     return view('contact');
 });*/
-//Test
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
+// routes/web.php
+Route::get('/', function () {
+    return view('home');
+})->name('home');
+
+Route::view('/about', 'about')->name('about');
+Route::view('/teams', 'teams')->name('teams');
+Route::view('/news', 'news')->name('news');
+Route::view('/shop', 'shop')->name('shop');
+Route::view('/partners', 'partners')->name('partners');
+
 
 Route::middleware([
     'auth:sanctum',
