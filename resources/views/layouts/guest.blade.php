@@ -20,7 +20,7 @@
             <li><a href="{{ route('about') }}" class="hover:text-orange-500">About</a></li>
             <li><a href="{{ route('teams') }}" class="hover:text-orange-500">Teams</a></li>
             <li><a href="{{ route('news') }}" class="hover:text-orange-500">News</a></li>
-            <li><a href="{{ route('shop') }}" class="hover:text-orange-500">Shop</a></li>
+            <li><a href="{{ route('shop.index') }}" class="hover:text-orange-500">Shop</a></li>
             <li><a href="{{ route('partners') }}" class="hover:text-orange-500">Partners</a></li>
         </ul>
         <div>
@@ -28,7 +28,6 @@
                 <a href="{{ route('dashboard') }}" class="bg-orange-500 px-4 py-2 rounded text-white">Dashboard</a>
             @else
                 <a href="{{ route('login') }}" class="bg-orange-500 px-4 py-2 rounded text-white">Login</a>
-                <a href="{{ route('register') }}" class="bg-orange-500 px-4 py-2 rounded text-white ml-2">Register</a>
             @endauth
         </div>
     </div>

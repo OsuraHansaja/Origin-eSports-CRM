@@ -28,8 +28,13 @@ Route::get('/', function () {
 Route::view('/about', 'about')->name('about');
 Route::view('/teams', 'teams')->name('teams');
 Route::view('/news', 'news')->name('news');
-Route::view('/shop', 'shop')->name('shop');
 Route::view('/partners', 'partners')->name('partners');
+
+
+use App\Http\Controllers\ProductController;
+
+Route::get('/shop', [ProductController::class, 'index'])->name('shop.index');
+Route::get('/shop/{id}', [ProductController::class, 'show'])->name('shop.show');
 
 
 Route::middleware([
