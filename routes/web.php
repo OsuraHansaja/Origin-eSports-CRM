@@ -16,7 +16,7 @@ Route::view('/contact-us','contact')->name('contact');
 /*Route::get('/contact',function () {
     return view('contact');
 });*/
-
+//Test
 
 Route::get('/', function () {
     return view('welcome');
