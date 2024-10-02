@@ -51,8 +51,8 @@ class AdminDashboardController extends Controller
     // Display all orders for order management
     public function viewOrders()
     {
-        $orders = Order::all(); // Retrieve all orders
-        return view('admin.orders.index', compact('orders')); // Create this view file for listing orders
+        $orders = Order::orderBy('id', 'desc')->get(); // Fetch orders in descending order
+        return view('admin.orders.index', compact('orders'));
     }
 
     // Display specific order details

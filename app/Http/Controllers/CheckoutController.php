@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cart;
-use App\Models\Order; // Import the Order model
+use App\Models\Order;
 
 class CheckoutController extends Controller
 {
