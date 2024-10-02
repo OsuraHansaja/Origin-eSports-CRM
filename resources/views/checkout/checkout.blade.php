@@ -7,6 +7,12 @@
         <form action="{{ route('checkout.process') }}" method="POST">
             @csrf
 
+            <div class="mb-4">
+                <label for="email" class="block text-sm font-medium">Email Address</label>
+                <input type="email" id="email" name="email" required class="w-full bg-gray-800 text-white border border-gray-600 p-2 mt-1 rounded focus:outline-none focus:border-orange-500"
+                       value="{{ auth()->check() ? auth()->user()->email : '' }}" {{ auth()->check() ? 'readonly' : '' }}>
+            </div>
+
             <!-- Shipping Address -->
             <div class="mb-4">
                 <label for="address" class="block text-sm font-medium">Shipping Address</label>

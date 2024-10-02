@@ -19,6 +19,7 @@ class CheckoutController extends Controller
         $request->validate([
             'address' => 'required|string|max:255',
             'payment' => 'required|string',
+            'email' => 'required|email|max:255', // Add email validation
         ]);
 
         // Process the order (add logic for creating the order in the database, reducing inventory, etc.)
