@@ -97,6 +97,13 @@ Route::prefix('admin')->group(function () {
         Route::get('dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
         Route::get('orders', [AdminDashboardController::class, 'viewOrders'])->name('admin.orders');
         Route::get('orders/{id}', [AdminDashboardController::class, 'viewOrderDetails'])->name('admin.orders.details');
+
+        // Admin Shop Routes
+        Route::get('shop', [AdminDashboardController::class, 'viewProducts'])->name('admin.shop');
+        Route::get('shop/create', [AdminDashboardController::class, 'createProduct'])->name('admin.shop.create');
+        Route::post('shop/store', [AdminDashboardController::class, 'storeProduct'])->name('admin.shop.store');
+        Route::get('shop/edit/{id}', [AdminDashboardController::class, 'editProduct'])->name('admin.shop.edit');
+        Route::post('shop/update/{id}', [AdminDashboardController::class, 'updateProduct'])->name('admin.shop.update');
     });
 });
 
