@@ -90,6 +90,8 @@ Route::prefix('admin')->group(function () {
     Route::post('login', [AdminAuthController::class, 'login']);
     Route::get('register', [AdminAuthController::class, 'showRegisterForm'])->name('admin.register');
     Route::post('register', [AdminAuthController::class, 'register']);
+    Route::post('admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
+
 
     Route::middleware('auth:admin')->group(function () {
         Route::get('dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');

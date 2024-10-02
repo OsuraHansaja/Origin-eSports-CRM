@@ -9,8 +9,16 @@
 </head>
 <body class="bg-gray-900 text-white">
 <nav class="bg-gray-800 p-4">
-    <div class="container mx-auto">
+    <div class="container mx-auto flex justify-between items-center">
         <a href="{{ route('admin.dashboard') }}" class="text-orange-500 font-bold">Admin Dashboard</a>
+
+        <!-- Logout Button -->
+        <form action="{{ route('admin.logout') }}" method="POST">
+            @csrf
+            <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded">
+                Logout
+            </button>
+        </form>
     </div>
 </nav>
 

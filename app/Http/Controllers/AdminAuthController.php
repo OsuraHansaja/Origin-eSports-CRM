@@ -48,5 +48,15 @@ class AdminAuthController extends Controller
 
         return redirect()->route('admin.login')->with('success', 'Admin registered successfully!');
     }
+
+    public function logout(Request $request)
+    {
+        Auth::guard('admin')->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('admin.login');
+    }
+
 }
 
