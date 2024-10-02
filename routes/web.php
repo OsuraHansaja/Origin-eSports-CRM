@@ -83,8 +83,8 @@ Route::middleware([
 });
 
 use App\Http\Controllers\AdminAuthController;
+use App\Http\Controllers\AdminDashboardController;
 
-// Admin Authentication Routes
 Route::prefix('admin')->group(function () {
     Route::get('login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
     Route::post('login', [AdminAuthController::class, 'login']);
@@ -93,11 +93,9 @@ Route::prefix('admin')->group(function () {
 
     Route::middleware('auth:admin')->group(function () {
         Route::get('dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
+        Route::get('orders', [AdminDashboardController::class, 'viewOrders'])->name('admin.orders');
+        Route::get('orders/{id}', [AdminDashboardController::class, 'viewOrderDetails'])->name('admin.orders.details');
     });
 });
 
-Route::middleware('auth:admin')->group(function () {
-    Route::get('dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
-    Route::get('orders', [AdminDashboardController::class, 'viewOrders'])->name('admin.orders');
-    Route::get('orders/{id}', [AdminDashboardController::class, 'viewOrderDetails'])->name('admin.orders.details');
-});
+
