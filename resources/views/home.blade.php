@@ -21,7 +21,7 @@
 
         <!-- "Shop Now" Button -->
         <div class="absolute bottom-10 left-0 right-0 text-center z-10"> <!-- Adjusted button position -->
-            <a href="" class="bg-orange-500 text-white px-6 py-3 rounded hover:bg-orange-600">
+            <a href="{{ route('shop.index') }}" class="bg-orange-500 text-white px-6 py-3 rounded hover:bg-orange-600">
                 Shop Now
             </a>
         </div>

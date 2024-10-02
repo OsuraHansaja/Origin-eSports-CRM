@@ -36,6 +36,15 @@ use App\Http\Controllers\ProductController;
 Route::get('/shop', [ProductController::class, 'index'])->name('shop.index');
 Route::get('/shop/{id}', [ProductController::class, 'show'])->name('shop.show');
 
+use App\Http\Controllers\CartController;
+
+Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::post('/cart/update/{id}', [CartController::class, 'updateQuantity'])->name('cart.update');
+Route::delete('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
+
+
+
 
 Route::middleware([
     'auth:sanctum',

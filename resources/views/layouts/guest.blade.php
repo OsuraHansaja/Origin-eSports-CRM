@@ -7,10 +7,10 @@
     <title>@yield('title', 'Origin Esports')</title>
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-900 text-white font-sans">
+<body class="bg-gray-900 text-white">
 <!-- Navbar -->
 <nav class="bg-gray-800 p-4">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
@@ -23,11 +23,19 @@
             <li><a href="{{ route('shop.index') }}" class="hover:text-orange-500">Shop</a></li>
             <li><a href="{{ route('partners') }}" class="hover:text-orange-500">Partners</a></li>
         </ul>
-        <div>
+        <div class="flex items-center space-x-4">
+            <!-- Cart Button -->
+            <a href="{{ route('cart.index') }}" class="text-white hover:text-orange-500">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2m0 0L7.84 15h8.32l2.44-10H5.4zM7.84 15l-.4 2m.4-2h8.32m0 0l.4 2m-9.12-2l1.28-6m1.28 6h4.08m-5.36 0l-.4 2m0-2l1.28-6m1.28 6h4.08m0 0l1.28-6M5.4 5h13.2m0 0l.4 2M5.4 5l-.4-2" />
+                </svg>
+            </a>
+
+            <!-- Login/Dashboard Button -->
             @auth
-                <a href="{{ route('dashboard') }}" class="bg-orange-500 px-4 py-2 rounded text-white">Dashboard</a>
+                <a href="{{ route('dashboard') }}" class="bg-orange-500 px-4 py-2 rounded text-white ml-2">Dashboard</a>
             @else
-                <a href="{{ route('login') }}" class="bg-orange-500 px-4 py-2 rounded text-white">Login</a>
+                <a href="{{ route('login') }}" class="bg-orange-500 px-4 py-2 rounded text-white ml-2">Login</a>
             @endauth
         </div>
     </div>
