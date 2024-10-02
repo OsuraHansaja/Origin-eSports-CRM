@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cart;
+use App\Models\Order; // Import the Order model
 
 class CheckoutController extends Controller
 {
@@ -19,10 +20,23 @@ class CheckoutController extends Controller
         $request->validate([
             'address' => 'required|string|max:255',
             'payment' => 'required|string',
-            'email' => 'required|email|max:255', // Add email validation
+            'email' => 'required|email|max:255', // Validate the email
         ]);
 
-        // Process the order (add logic for creating the order in the database, reducing inventory, etc.)
+        // Calculate the total amount
+        $cartItems = Cart::with('product')->get();
+        $totalAmount = $cartItems->sum(function ($item) {
+            return $item->product->price * $item->quantity;
+        });
+
+        // Store the order in the orders table
+        Order::create([
+            'email' => $request->input('email'),
+            'address' => $request->input('address'),
+            'payment_method' => $request->input('payment'),
+            'items' => $cartItems->toJson(), // Store cart items as JSON
+            'total_amount' => $totalAmount,
+        ]);
 
         // Clear the cart after successful checkout
         Cart::truncate();
