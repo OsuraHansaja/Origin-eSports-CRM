@@ -60,9 +60,9 @@
                     </h2>
 
                     <!-- Checkout Button -->
-                    <button class="mt-4 w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded-lg">
+                    <a href="{{ route('checkout.index') }}" class="mt-4 w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded-lg text-center block">
                         Proceed to Checkout
-                    </button>
+                    </a>
                 </div>
             </div>
         @endif
