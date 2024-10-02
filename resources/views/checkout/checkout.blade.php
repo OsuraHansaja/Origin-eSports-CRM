@@ -13,6 +13,19 @@
                        value="{{ auth()->check() ? auth()->user()->email : '' }}" {{ auth()->check() ? 'readonly' : '' }}>
             </div>
 
+            <!-- Country Selection -->
+            <div class="mb-4">
+                <label for="country" class="block text-sm font-medium">Country</label>
+                <select id="country" name="country" required class="w-full bg-gray-800 text-white border border-gray-600 p-2 mt-1 rounded focus:outline-none focus:border-orange-500">
+                    <option value="">Select your country</option>
+                    <option value="USA">United States</option>
+                    <option value="Canada">Canada</option>
+                    <option value="UK">United Kingdom</option>
+                    <!-- Add more countries as needed -->
+                </select>
+            </div>
+
+
             <!-- Shipping Address -->
             <div class="mb-4">
                 <label for="address" class="block text-sm font-medium">Shipping Address</label>

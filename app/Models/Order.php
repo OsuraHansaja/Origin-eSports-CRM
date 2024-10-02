@@ -15,5 +15,6 @@ class Order extends Model
         'payment_method',
         'items',
         'total_amount',
+        'country',
     ];
 }

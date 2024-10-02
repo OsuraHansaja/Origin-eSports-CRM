@@ -20,7 +20,8 @@ class CheckoutController extends Controller
         $request->validate([
             'address' => 'required|string|max:255',
             'payment' => 'required|string',
-            'email' => 'required|email|max:255', // Validate the email
+            'email' => 'required|email|max:255',
+            'country' => 'required|string|max:255', // Validate the country
         ]);
 
         // Calculate the total amount
@@ -36,6 +37,7 @@ class CheckoutController extends Controller
             'payment_method' => $request->input('payment'),
             'items' => $cartItems->toJson(), // Store cart items as JSON
             'total_amount' => $totalAmount,
+            'country' => $request->input('country'), // Store the country
         ]);
 
         // Clear the cart after successful checkout
@@ -44,6 +46,7 @@ class CheckoutController extends Controller
         // Redirect to a thank-you page
         return redirect()->route('checkout.thankyou')->with('success', 'Order placed successfully!');
     }
+
 
     public function thankyou()
     {

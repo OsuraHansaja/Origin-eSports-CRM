@@ -8,6 +8,9 @@
             <strong>Email:</strong> {{ $order->email }}
         </div>
         <div class="mb-4">
+            <strong>Country:</strong> {{ $order->country }}
+        </div>
+        <div class="mb-4">
             <strong>Address:</strong> {{ $order->address }}
         </div>
         <div class="mb-4">
