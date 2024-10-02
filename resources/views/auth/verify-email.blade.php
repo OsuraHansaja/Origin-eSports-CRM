@@ -1,10 +1,10 @@
-<x-guest-layout>
-    <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
+@extends('layouts.guest')
 
-        <div class="mb-4 text-sm text-gray-600">
+@section('content')
+    <div class="max-w-md mx-auto mt-8 bg-gray-800 p-6 rounded-lg shadow-md">
+        <x-authentication-card-logo class="mx-auto mb-4" />
+
+        <div class="mb-4 text-sm text-gray-300">
             {{ __('Before continuing, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}
         </div>
 
@@ -19,7 +19,7 @@
                 @csrf
 
                 <div>
-                    <x-button type="submit">
+                    <x-button type="submit" class="bg-orange-500 hover:bg-orange-600">
                         {{ __('Resend Verification Email') }}
                     </x-button>
                 </div>
@@ -28,18 +28,19 @@
             <div>
                 <a
                     href="{{ route('profile.show') }}"
-                    class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    class="underline text-sm text-orange-500 hover:text-orange-600 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
                 >
-                    {{ __('Edit Profile') }}</a>
+                    {{ __('Edit Profile') }}
+                </a>
 
                 <form method="POST" action="{{ route('logout') }}" class="inline">
                     @csrf
 
-                    <button type="submit" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ms-2">
+                    <button type="submit" class="underline text-sm text-orange-500 hover:text-orange-600 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 ms-2">
                         {{ __('Log Out') }}
                     </button>
                 </form>
             </div>
         </div>
-    </x-authentication-card>
-</x-guest-layout>
+    </div>
+@endsection

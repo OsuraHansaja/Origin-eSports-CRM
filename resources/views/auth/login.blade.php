@@ -1,16 +1,16 @@
-<x-guest-layout>
-    <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
+@extends('layouts.guest')
+
+@section('content')
+    <div class="max-w-md mx-auto mt-8 bg-gray-800 p-6 rounded-lg shadow-md">
+        <x-authentication-card-logo class="mx-auto mb-4" />
 
         <x-validation-errors class="mb-4" />
 
-        @session('status')
+        @if (session('status'))
             <div class="mb-4 font-medium text-sm text-green-600">
-                {{ $value }}
+                {{ session('status') }}
             </div>
-        @endsession
+        @endif
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
@@ -28,21 +28,24 @@
             <div class="block mt-4">
                 <label for="remember_me" class="flex items-center">
                     <x-checkbox id="remember_me" name="remember" />
-                    <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                    <span class="ml-2 text-sm text-gray-300">{{ __('Remember me') }}</span>
                 </label>
             </div>
+            <div class="mt-4">
+                <a href="{{ route('register') }}" class="text-sm text-orange-500 hover:underline">Don't have an account? Register here</a>
+            </div>
 
-            <div class="flex items-center justify-end mt-4">
+            <div class="flex items-center justify-between mt-4">
                 @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
+                    <a class="underline text-sm text-orange-500 hover:text-orange-600 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500" href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
                     </a>
                 @endif
 
-                <x-button class="ms-4">
+                <x-button class="ml-4 bg-orange-500 hover:bg-orange-600">
                     {{ __('Log in') }}
                 </x-button>
             </div>
         </form>
-    </x-authentication-card>
-</x-guest-layout>
+    </div>
+@endsection

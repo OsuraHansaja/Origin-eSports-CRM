@@ -1,15 +1,15 @@
-<x-guest-layout>
-    <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
+@extends('layouts.guest')
+
+@section('content')
+    <div class="max-w-md mx-auto mt-8 bg-gray-800 p-6 rounded-lg shadow-md">
+        <x-authentication-card-logo class="mx-auto mb-4" />
 
         <div x-data="{ recovery: false }">
-            <div class="mb-4 text-sm text-gray-600" x-show="! recovery">
+            <div class="mb-4 text-sm text-gray-300" x-show="! recovery">
                 {{ __('Please confirm access to your account by entering the authentication code provided by your authenticator application.') }}
             </div>
 
-            <div class="mb-4 text-sm text-gray-600" x-cloak x-show="recovery">
+            <div class="mb-4 text-sm text-gray-300" x-cloak x-show="recovery">
                 {{ __('Please confirm access to your account by entering one of your emergency recovery codes.') }}
             </div>
 
@@ -29,30 +29,30 @@
                 </div>
 
                 <div class="flex items-center justify-end mt-4">
-                    <button type="button" class="text-sm text-gray-600 hover:text-gray-900 underline cursor-pointer"
-                                    x-show="! recovery"
-                                    x-on:click="
-                                        recovery = true;
-                                        $nextTick(() => { $refs.recovery_code.focus() })
-                                    ">
+                    <button type="button" class="text-sm text-gray-300 hover:text-gray-400 underline cursor-pointer"
+                            x-show="! recovery"
+                            x-on:click="
+                                recovery = true;
+                                $nextTick(() => { $refs.recovery_code.focus() })
+                            ">
                         {{ __('Use a recovery code') }}
                     </button>
 
-                    <button type="button" class="text-sm text-gray-600 hover:text-gray-900 underline cursor-pointer"
-                                    x-cloak
-                                    x-show="recovery"
-                                    x-on:click="
-                                        recovery = false;
-                                        $nextTick(() => { $refs.code.focus() })
-                                    ">
+                    <button type="button" class="text-sm text-gray-300 hover:text-gray-400 underline cursor-pointer"
+                            x-cloak
+                            x-show="recovery"
+                            x-on:click="
+                                recovery = false;
+                                $nextTick(() => { $refs.code.focus() })
+                            ">
                         {{ __('Use an authentication code') }}
                     </button>
 
-                    <x-button class="ms-4">
+                    <x-button class="ms-4 bg-orange-500 hover:bg-orange-600">
                         {{ __('Log in') }}
                     </x-button>
                 </div>
             </form>
         </div>
-    </x-authentication-card>
-</x-guest-layout>
+    </div>
+@endsection
