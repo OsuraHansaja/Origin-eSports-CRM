@@ -80,4 +80,19 @@ class NewsController extends Controller
         $newsItem->delete();
         return redirect()->route('admin.news.index')->with('success', 'News item deleted successfully.');
     }
+
+    public function showNews()
+    {
+        // Get the 8 most recent news items
+        $newsItems = News::orderBy('created_at', 'desc')->take(8)->get();
+        return view('news', compact('newsItems'));
+    }
+
+    public function show($id)
+    {
+        $newsItem = News::findOrFail($id);
+        return view('news.show', compact('newsItem'));
+    }
+
+
 }

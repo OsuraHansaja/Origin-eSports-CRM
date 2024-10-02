@@ -3,6 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\ForumPostController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\HomeController;
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
 
 Route::get('/hello', function () {
     return view('hello', [
@@ -21,9 +26,9 @@ Route::view('/contact-us','contact')->name('contact');
     return view('welcome');
 });*/
 // routes/web.php
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('home');
-})->name('home');
+})->name('home');*/
 
 Route::view('/about', 'about')->name('about');
 Route::view('/teams', 'teams')->name('teams');
@@ -48,6 +53,12 @@ use App\Http\Controllers\CheckoutController;
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
 Route::post('/checkout', [CheckoutController::class, 'process'])->name('checkout.process');
 Route::get('/checkout/thankyou', [CheckoutController::class, 'thankyou'])->name('checkout.thankyou');
+
+
+
+// Display News for the User Side
+Route::get('/news', [NewsController::class, 'showNews'])->name('news');
+Route::get('/news/{id}', [NewsController::class, 'show'])->name('news.show');
 
 
 
@@ -84,7 +95,7 @@ Route::middleware([
 
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\AdminDashboardController;
-use App\Http\Controllers\NewsController;
+
 
 Route::prefix('admin')->group(function () {
     Route::get('login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
