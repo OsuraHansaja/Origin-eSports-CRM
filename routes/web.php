@@ -84,6 +84,7 @@ Route::middleware([
 
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\NewsController;
 
 Route::prefix('admin')->group(function () {
     Route::get('login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
@@ -104,6 +105,14 @@ Route::prefix('admin')->group(function () {
         Route::post('shop/store', [AdminDashboardController::class, 'storeProduct'])->name('admin.shop.store');
         Route::get('shop/edit/{id}', [AdminDashboardController::class, 'editProduct'])->name('admin.shop.edit');
         Route::post('shop/update/{id}', [AdminDashboardController::class, 'updateProduct'])->name('admin.shop.update');
+
+        //News Routes
+        Route::get('news', [NewsController::class, 'index'])->name('admin.news.index');
+        Route::get('news/create', [NewsController::class, 'create'])->name('admin.news.create');
+        Route::post('news/store', [NewsController::class, 'store'])->name('admin.news.store');
+        Route::get('news/edit/{id}', [NewsController::class, 'edit'])->name('admin.news.edit');
+        Route::post('news/update/{id}', [NewsController::class, 'update'])->name('admin.news.update');
+        Route::delete('news/destroy/{id}', [NewsController::class, 'destroy'])->name('admin.news.destroy');
     });
 });
 
