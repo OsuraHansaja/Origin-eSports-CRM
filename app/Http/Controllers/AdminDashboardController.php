@@ -11,8 +11,42 @@ class AdminDashboardController extends Controller
     // Display the admin dashboard
     public function index()
     {
-        return view('admin.dashboard'); // You will need to create this view file later
+        // Calculate total net income (sum of all orders)
+        $totalIncome = Order::sum('total_amount');
+
+        // Calculate this month's income
+        $currentMonthIncome = Order::whereMonth('created_at', now()->month)->sum('total_amount');
+
+        // Total order count
+        $totalOrders = Order::count();
+
+        // Most sold item (rank by product name and count of appearance in orders)
+        $products = Order::all()->pluck('items');
+        $itemCounts = [];
+
+        foreach ($products as $productJson) {
+            $items = json_decode($productJson, true);
+            foreach ($items as $item) {
+                $productName = $item['product']['name'];
+                if (isset($itemCounts[$productName])) {
+                    $itemCounts[$productName] += $item['quantity'];
+                } else {
+                    $itemCounts[$productName] = $item['quantity'];
+                }
+            }
+        }
+        arsort($itemCounts);
+        $mostSoldItems = array_slice($itemCounts, 0, 5);
+
+        // Get the countries by sales (assuming 'country' is stored in the orders table)
+        $countrySales = Order::select('country', \DB::raw('count(*) as total'))
+            ->groupBy('country')
+            ->orderByDesc('total')
+            ->get();
+
+        return view('admin.dashboard', compact('totalIncome', 'currentMonthIncome', 'totalOrders', 'mostSoldItems', 'countrySales'));
     }
+
 
     // Display all orders for order management
     public function viewOrders()
