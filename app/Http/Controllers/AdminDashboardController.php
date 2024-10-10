@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\News;
 
 class AdminDashboardController extends Controller
 {
@@ -44,9 +45,18 @@ class AdminDashboardController extends Controller
             ->orderByDesc('total')
             ->get();
 
-        return view('admin.dashboard', compact('totalIncome', 'currentMonthIncome', 'totalOrders', 'mostSoldItems', 'countrySales'));
-    }
+        // Fetch all news items with views count
+        $newsItems = News::with('views')->get();  // Eager load views
 
+        return view('admin.dashboard', compact(
+            'totalIncome',
+            'currentMonthIncome',
+            'totalOrders',
+            'mostSoldItems',
+            'countrySales',
+            'newsItems' // Pass the news items to the view
+        ));
+    }
 
     // Display all orders for order management
     public function viewOrders()
@@ -140,6 +150,4 @@ class AdminDashboardController extends Controller
 
         return redirect()->route('admin.shop')->with('success', 'Product deleted successfully!');
     }
-
-
 }

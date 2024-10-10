@@ -126,6 +126,8 @@ Route::prefix('admin')->group(function () {
         Route::get('news/edit/{id}', [NewsController::class, 'edit'])->name('admin.news.edit');
         Route::post('news/update/{id}', [NewsController::class, 'update'])->name('admin.news.update');
         Route::delete('news/destroy/{id}', [NewsController::class, 'destroy'])->name('admin.news.destroy');
+        Route::get('news/clicks', [AdminDashboardController::class, 'viewNewsClicks'])->name('admin.news.clicks');
+
     });
 });
 

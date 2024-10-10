@@ -24,6 +24,36 @@
             </div>
         </div>
 
+        <!-- News View Count Section -->
+        <div class="grid grid-cols-3 gap-6 mb-8">
+            <div class="col-span-2">
+                <h2 class="text-xl font-bold mb-4">News View Count</h2>
+                <table class="w-full bg-gray-800 text-white mt-4 rounded-lg">
+                    <thead>
+                    <tr class="bg-gray-700">
+                        <th class="p-4 text-left">Title</th>
+                        <th class="p-4 text-left">Total Views</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach ($newsItems as $news)
+                        <tr class="border-t border-gray-700">
+                            <td class="p-4">{{ $news->title }}</td>
+                            <td class="p-4">{{ $news->views->count() }}</td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Edit News Button -->
+            <div class="flex justify-center items-center">
+                <a href="{{ route('admin.news.index') }}" class="bg-orange-500 text-white px-6 py-3 rounded hover:bg-orange-600">
+                    Edit News
+                </a>
+            </div>
+        </div>
+
         <!-- Charts Section -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
             <!-- Sales by Country Chart -->
@@ -63,7 +93,7 @@
                     datasets: [{
                         label: 'Sales by Country',
                         data: countryData,
-                        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40', '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0'],
+                        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40', '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'],
                     }]
                 },
                 options: {

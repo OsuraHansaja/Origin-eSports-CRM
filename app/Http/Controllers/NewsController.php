@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\News;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use App\Models\NewsView;
 
 class NewsController extends Controller
 {
@@ -91,6 +93,23 @@ class NewsController extends Controller
     public function show($id)
     {
         $newsItem = News::findOrFail($id);
+
+        // Check if the session already has a record of viewing this news
+        $sessionId = session()->getId();
+
+        $alreadyViewed = NewsView::where('news_id', $newsItem->id)
+            ->where('session_id', $sessionId)
+            ->exists();
+
+        if (!$alreadyViewed) {
+            // Log the view in the news_views table
+            NewsView::create([
+                'news_id'   => $newsItem->id,
+                'user_id'   => Auth::check() ? Auth::id() : null, // Track user ID if logged in
+                'session_id'=> $sessionId,                         // Track the session ID
+            ]);
+        }
+
         return view('news.show', compact('newsItem'));
     }
 
