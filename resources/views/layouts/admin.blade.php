@@ -39,6 +39,7 @@
             <a href="{{ route('admin.shop') }}" class="text-white font-bold ml-4 text-lg hover:text-orange-500">Shop</a>
             <a href="{{ route('admin.orders') }}" class="text-white font-bold ml-4 text-lg hover:text-orange-500">Orders</a>
             <a href="{{ route('admin.news.index') }}" class="text-white font-bold ml-4 text-lg hover:text-orange-500">News</a>
+            <a href="{{ route('admin.newsletters.index') }}" class="text-white font-bold ml-4 text-lg hover:text-orange-500">Newsletter</a>
         </div>
 
         <!-- Logout Button -->

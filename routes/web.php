@@ -60,6 +60,10 @@ Route::get('/checkout/thankyou', [CheckoutController::class, 'thankyou'])->name(
 Route::get('/news', [NewsController::class, 'showNews'])->name('news');
 Route::get('/news/{id}', [NewsController::class, 'show'])->name('news.show');
 
+// Newsletter routes
+use App\Http\Controllers\NewsletterController;
+
+Route::post('/newsletter', [NewsletterController::class, 'store'])->name('newsletter.store');
 
 
 
@@ -118,6 +122,7 @@ Route::prefix('admin')->group(function () {
         Route::post('shop/update/{id}', [AdminDashboardController::class, 'updateProduct'])->name('admin.shop.update');
         Route::delete('shop/destroy/{id}', [AdminDashboardController::class, 'destroyProduct'])->name('admin.shop.destroy');
 
+        Route::get('/newsletters', [NewsletterController::class, 'index'])->name('admin.newsletters.index');
 
         //News Routes
         Route::get('news', [NewsController::class, 'index'])->name('admin.news.index');

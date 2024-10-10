@@ -63,6 +63,18 @@
                 </a>
             @endforeach
         </div>
+        <!-- Newsletter Signup Section -->
+        <div class="newsletter-signup bg-gray-800 p-8 rounded-lg mt-8">
+            <h2 class="text-3xl font-bold text-center text-white mb-4">Sign Up for Our Newsletter</h2>
+            <form action="{{ route('newsletter.store') }}" method="POST" class="flex flex-col items-center">
+                @csrf
+                <input type="email" name="email" placeholder="Enter your email" required class="w-full p-4 rounded bg-gray-700 text-white focus:outline-none focus:border-orange-500">
+                <button type="submit" class="mt-4 bg-orange-500 text-white px-6 py-3 rounded hover:bg-orange-600">Sign Up</button>
+            </form>
+            @if(session('success'))
+                <p class="text-center text-green-500 mt-4">{{ session('success') }}</p>
+            @endif
+        </div>
     </div>
 
 @endsection
