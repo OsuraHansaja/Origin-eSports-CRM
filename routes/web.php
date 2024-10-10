@@ -116,6 +116,8 @@ Route::prefix('admin')->group(function () {
         Route::post('shop/store', [AdminDashboardController::class, 'storeProduct'])->name('admin.shop.store');
         Route::get('shop/edit/{id}', [AdminDashboardController::class, 'editProduct'])->name('admin.shop.edit');
         Route::post('shop/update/{id}', [AdminDashboardController::class, 'updateProduct'])->name('admin.shop.update');
+        Route::delete('shop/destroy/{id}', [AdminDashboardController::class, 'destroyProduct'])->name('admin.shop.destroy');
+
 
         //News Routes
         Route::get('news', [NewsController::class, 'index'])->name('admin.news.index');

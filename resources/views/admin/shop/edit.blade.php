@@ -4,6 +4,7 @@
     <div class="container mx-auto py-8">
         <h1 class="text-3xl font-bold mb-8">Edit Product</h1>
 
+        <!-- Update Product Form -->
         <form action="{{ route('admin.shop.update', $product->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
 
@@ -32,8 +33,19 @@
                 <p class="text-sm text-gray-400 mt-2">Current Image: <img src="{{ $product->image }}" alt="Product Image" class="w-32 h-32 object-cover mt-2"></p>
             </div>
 
-            <!-- Submit Button -->
-            <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded-lg">Update Product</button>
+            <!-- Update Product Button -->
+            <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded-lg">
+                Update Product
+            </button>
+        </form>
+
+        <!-- Delete Form -->
+        <form action="{{ route('admin.shop.destroy', $product->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this product?');" class="mt-4">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-3 rounded-lg">
+                Delete Product
+            </button>
         </form>
     </div>
 @endsection
