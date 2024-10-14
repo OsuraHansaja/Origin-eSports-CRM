@@ -24,7 +24,7 @@
 ## Tech Stack
 
 - **Backend**: [Laravel 11](https://laravel.com/)
-- **Frontend**: Tailwind CSS, Alpine.js
+- **Frontend**: Blade, Tailwind CSS, Alpine.js
 - **Database**: MySQL
 - **Tools**: Jetstream, Livewire, Laravel Forge for hosting
 
