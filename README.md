@@ -26,7 +26,7 @@
 - **Backend**: [Laravel 11](https://laravel.com/)
 - **Frontend**: Blade, Tailwind CSS, Alpine.js
 - **Database**: MySQL
-- **Tools**: Jetstream, Livewire, Laravel Forge for hosting
+- **Tools**: Jetstream, Livewire, Laravel Forge
 
 ---
 
