@@ -4,6 +4,14 @@
 
 <p align="center">
   A powerful CRM platform for managing esports fans, merchandise sales, news, teams, and discussions, built with <b>Laravel 11</b> and <b>Tailwind CSS</b>.
+    The users for the system are mainly two sets. The fans of the eSports organization and the 
+administration staff running the platform. 
+The fans for now are just casual users who can either just view the platform or browse through the 
+shopping catalog, view details about the org, view event details, etc, without needing to sign up 
+for an account and those users can sign up for an account to gain access to all the other features. 
+There also exists the site management (administrator) users, who will mainly manage the site, keep 
+the merch inventories updated, updating the org details, viewing analytics, handling customer 
+support tickets, etc.
 </p>
 
 ---
