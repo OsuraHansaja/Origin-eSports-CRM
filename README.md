@@ -1,17 +1,10 @@
-
-
 <h1 align="center" style="font-family: 'Orbitron', sans-serif;">Origin Esports CRM</h1>
 
 <p align="center">
   A powerful CRM platform for managing esports fans, merchandise sales, news, teams, and discussions, built with <b>Laravel 11</b> and <b>Tailwind CSS</b>.
-    The users for the system are mainly two sets. The fans of the eSports organization and the 
-administration staff running the platform. 
-The fans for now are just casual users who can either just view the platform or browse through the 
-shopping catalog, view details about the org, view event details, etc, without needing to sign up 
-for an account and those users can sign up for an account to gain access to all the other features. 
-There also exists the site management (administrator) users, who will mainly manage the site, keep 
-the merch inventories updated, updating the org details, viewing analytics, handling customer 
-support tickets, etc.
+  The users for the system are mainly two sets: the fans of the esports organization and the administration staff running the platform. 
+  Fans can either browse the platform, shopping catalog, view details about the org, and event details without signing up, or sign up to access more features. 
+  The site management (administrator) users will manage the site, keep merchandise inventories updated, update the org details, view analytics, handle customer support tickets, and more.
 </p>
 
 ---
@@ -23,7 +16,7 @@ support tickets, etc.
 - **Team Pages**: Showcase information about your esports teams.
 - **Forums and Discussions**: Engage with fans through interactive forums.
 - **Merchandise Shop**: Sell and manage esports merchandise.
-- **Shoping Cart**: Buy and save esports merchandise into personal carts.
+- **Shopping Cart**: Buy and save esports merchandise into personal carts.
 - **Sponsor Management**: Highlight team sponsors and their contributions.
 
 ---
@@ -41,9 +34,29 @@ support tickets, etc.
 
 ### Homepage
 ![Homepage](public/images/readme screenshots/Home Page.png)
+![Homepage - Part 2](public/images/readme screenshots/Home Page p2.png)
 
 ### Shop Section
-![Shop Section](https://github.com/OsuraHansaja/Origin-eSports-CRM/path-to-your-screenshot2.png)
+![Shop Page](public/images/readme screenshots/Shop Page.png)
+![Shop Item Page](public/images/readme screenshots/Shop Item Page.png)
+![Shop Cart Page](public/images/readme screenshots/Shop Cart Page.png)
+
+### Team Pages
+![Team Page](public/images/readme screenshots/Team Page.png)
+
+### News Section
+![News Page](public/images/readme screenshots/News Page.png)
+
+### Admin Dashboard
+![Admin Dashboard](public/images/readme screenshots/admin dashboard.png)
+![Admin Dashboard - Part 2](public/images/readme screenshots/admin dashboard p2.png)
+
+### Admin Shop Management
+![Admin Shop](public/images/readme screenshots/admin shop.png)
+
+### Admin News Management
+![Admin News](public/images/readme screenshots/admin news.png)
+![Admin News Creation](public/images/readme screenshots/admin news create.png)
 
 ---
 
