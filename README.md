@@ -1,7 +1,7 @@
 <h1 align="center" style="font-family: 'Orbitron', sans-serif;">Origin Esports CRM</h1>
 
 <p align="center">
-  A powerful CRM platform for managing esports fans, merchandise sales, news, teams, and discussions, built with <b>Laravel 11</b> and <b>Tailwind CSS</b>.
+  A CRM platform for managing esports fans, merchandise sales, news, teams, and discussions, built with <b>Laravel 11</b> and <b>Tailwind CSS</b>.
   The users for the system are mainly two sets: the fans of the esports organization and the administration staff running the platform. 
   Fans can either browse the platform, shopping catalog, view details about the org, and event details without signing up, or sign up to access more features. 
   The site management (administrator) users will manage the site, keep merchandise inventories updated, update the org details, view analytics, handle customer support tickets, and more.
