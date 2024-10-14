@@ -33,30 +33,30 @@
 ## Screenshots
 
 ### Homepage
-![Homepage](public/images/readme screenshots/Home Page.png)
-![Homepage - Part 2](public/images/readme screenshots/Home Page p2.png)
+![Homepage](public/images/readme%20screenshots/Home%20Page.png)
+![Homepage - Part 2](public/images/readme%20screenshots/Home%20Page%20p2.png)
 
 ### Shop Section
-![Shop Page](public/images/readme screenshots/Shop Page.png)
-![Shop Item Page](public/images/readme screenshots/Shop Item Page.png)
-![Shop Cart Page](public/images/readme screenshots/Shop Cart Page.png)
+![Shop Page](public/images/readme%20screenshots/Shop%20Page.png)
+![Shop Item Page](public/images/readme%20screenshots/Shop%20Item%20Page.png)
+![Shop Cart Page](public/images/readme%20screenshots/Shop%20Cart%20Page.png)
 
 ### Team Pages
-![Team Page](public/images/readme screenshots/Team Page.png)
+![Team Page](public/images/readme%20screenshots/Team%20Page.png)
 
 ### News Section
-![News Page](public/images/readme screenshots/News Page.png)
+![News Page](public/images/readme%20screenshots/News%20Page.png)
 
 ### Admin Dashboard
-![Admin Dashboard](public/images/readme screenshots/admin dashboard.png)
-![Admin Dashboard - Part 2](public/images/readme screenshots/admin dashboard p2.png)
+![Admin Dashboard](public/images/readme%20screenshots/admin%20dashboard.png)
+![Admin Dashboard - Part 2](public/images/readme%20screenshots/admin%20dashboard%20p2.png)
 
 ### Admin Shop Management
-![Admin Shop](public/images/readme screenshots/admin shop.png)
+![Admin Shop](public/images/readme%20screenshots/admin%20shop.png)
 
 ### Admin News Management
-![Admin News](public/images/readme screenshots/admin news.png)
-![Admin News Creation](public/images/readme screenshots/admin news create.png)
+![Admin News](public/images/readme%20screenshots/admin%20news.png)
+![Admin News Creation](public/images/readme%20screenshots/admin%20news%20create.png)
 
 ---
 
