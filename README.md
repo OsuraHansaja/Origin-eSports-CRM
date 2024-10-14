@@ -1,4 +1,4 @@
-<p align="center"><a href="https://github.com/OsuraHansaja/Origin-eSports-CRM" target="_blank"><img src="public/images/logo.png" width="400" alt="Origin Esports CRM Logo"></a></p>
+
 
 <h1 align="center" style="font-family: 'Orbitron', sans-serif;">Origin Esports CRM</h1>
 
