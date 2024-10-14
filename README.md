@@ -19,10 +19,11 @@ support tickets, etc.
 ## Features
 
 - **Fan Management**: Keep track of fans, their interests, and engagement.
-- **Merchandise Shop**: Sell and manage esports merchandise.
-- **Forums and Discussions**: Engage with fans through interactive forums.
-- **Team Pages**: Showcase information about your esports teams.
 - **News and Updates**: Post and share the latest news and content with fans.
+- **Team Pages**: Showcase information about your esports teams.
+- **Forums and Discussions**: Engage with fans through interactive forums.
+- **Merchandise Shop**: Sell and manage esports merchandise.
+- **Shoping Cart**: Buy and save esports merchandise into personal carts.
 - **Sponsor Management**: Highlight team sponsors and their contributions.
 
 ---
