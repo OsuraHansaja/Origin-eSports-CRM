@@ -40,7 +40,7 @@ support tickets, etc.
 ## Screenshots
 
 ### Homepage
-![Homepage](https://github.com/OsuraHansaja/Origin-eSports-CRM/path-to-your-screenshot1.png)
+![Homepage](public/images/readme screenshots/Home Page.png)
 
 ### Shop Section
 ![Shop Section](https://github.com/OsuraHansaja/Origin-eSports-CRM/path-to-your-screenshot2.png)
